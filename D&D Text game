@@ -1,0 +1,96 @@
+#!/usr/bin/env python3
+name = input("Enter Username\n")
+print("Welcome " + name + "." )
+
+#stats
+dopeness = 0
+#player/enemy health
+health = 10
+enemyHealth = 10
+
+#story
+def message(msg):
+    print(msg)
+
+message(name)
+message("You are a normal person who was whisked away from your home 'Earth' into the sacred land of Gruumsh.")
+message("The land of Gruumsh was taken over by the evil sorcerer Wouxir The Litch king and has risen the undead")
+message("You ready your blade, exited for battle and exclaim, 'Taste thine blade'")
+message("It seems like you can go south")
+question = input("Would you like to go south? [Y/N] ")
+#first decision
+if question.lower() == "n":
+    print("You sheath your sword, lay down on the ground and dream of home")
+    exit()
+if question.lower() == "y":
+    print("You see the first of many of Wouxir's undead minions.")
+message("The undead minion looks fresh out of his grave and prepares to strike")
+question = input("Would you like to parry his attack, attempt to dodge, or take it like a man? [Parry/Dodge/Take it like a man] ")
+#combat choices
+
+if question.lower() == "parry":
+    print("You parry his blade and knock it out of his hands")
+    question = input("Do you slay the foul beast or knock it out and casually walk away? [slay/knock it out]")
+    if question.lower() == "slay":
+        print("You expertly slice its rotting head off and continue on your journey")
+    if question.lower() == "knock it out":
+        print("You hit the undead's head with the hilt of your sword and continue on your journey")
+
+if question.lower() == "dodge":
+    print("You roll through his legs dodging his blade and stand up behind him")
+    question = input("Do you run away and spare the undead or do you stab it in the back? [Spare/backstab] ")
+    if question.lower() == "spare":
+        print("You spare the undead's death? life?.... you run away")
+    if question.lower() == "backstab":
+        print("You quickly stab the undead in the back, your sword protrudes through his chest")
+
+if question.lower() == "take it like a man":
+    dopeness += 1
+    print("You decide to take it like a man because you saw it one time in a movie. Tis only a flesh wound right?")
+    question = input("Would you like to get revenge for him stabbing you or have a starring contest? [Revenge/Starring contest] ")
+    if question.lower() == "starring contest":
+            dopeness += 1
+            print("Your idiocy confused the undead minion so he left you alone!")
+    if question.lower() == "revenge":
+        print("You take revenge from him stabbing you by pulling his sword  out of your side and throw it straight up in the air, "
+              "the undead looks at you confused until his sword flies back down and impales him in the skull")
+message("You have done well young warrior, said the Litch king, now prepare to DIE!")
+message("The Litch king is flying in the air, your sword will have no effect")
+question = input("The litch king is about to shoot a fire ball and is near a pillar, would you like to hit it back"
+                 "to him or run to push over the pillar [hit fireball/push pillar]")
+if dopeness == 2:
+    question = input("because of your astronomically low IQ you might have the 'bright' idea of "
+                     "throwing your sword at him [throw sword]")
+    if question.lower() == "throw sword":
+        print("Your sword has no effect but the Litch king can not see Sir Cena and gets RKOed out of nowhere")
+        print("Sir Cena congratulates you on your stupidity and puts you in a sleeper hold until you pass out"
+              "You wake up but Sir Cena is nowhere to be seen"
+              "The End"
+              "..."
+              "You got the 'Did this really happen?' ending")
+        exit()
+
+if question.lower() == "hit fireball":
+    print("You swing at the fireball like a bat with your sword, but its a fireball and you have a sword so"
+          "the fireball gets cut in half and you get roasted and toasted"
+          "You got the 'Its getting hot in here' ending")
+    exit()
+if question.lower() == "push pillar":
+    print("The crumbling pillar falls over and knocks the Litch king to the ground"
+          "he seems angry enough to explode")
+    question = input("Do you run and finish off the Litch King or hide behind "
+                     "the debris of the pillar? ['finish him' / 'hide behind the debris']")
+    if question.lower() == "finish him":
+        print("You run at him blinded by victory until you realize too late he really was angry enough to explode"
+              "You got the 'Pop goes the player' ending")
+    if question.lower() == "hide behind the debris":
+        print("You hide behind the debris and get protected from the Litch's explosion ")
+        question = input("You see your best friend in the corner tied up and gagged, do you untie him or continue attacking the Litch [save friend/attack litch]")
+        if question.lower() == "save friend":
+            print("As soon as you set your friend free you get set on fire, your friend tries putting it out but nothing is working, until you realize there is no fire and you have no friends. You got the 'Insanity' ending")
+        if question.lower() == "attack litch":
+            print("You run at the Litch with everything you've got, he has his guard up but you realize his left thigh "
+                  "is wide open, you swing and wound him badly and continue to weaken him until you say...")
+            print("The name's " + name + "and don't you forget it"
+                                         "You slay the ruler of the undead and become the ruler of the kingdom")
+            print("You got the King " + name + " ending.")
